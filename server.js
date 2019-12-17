@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 
+
+
 const userRoute = require('./routes/user');
 
 
@@ -20,5 +22,5 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use('/user', userRoute);
 
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, console.log('server started...'));
